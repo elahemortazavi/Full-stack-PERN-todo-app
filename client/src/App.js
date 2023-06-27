@@ -1,8 +1,18 @@
-import './App.css';
+import React, { Fragment } from "react";
+import "./App.css";
+
+//import components:
+import InputTodo from "./components/InputTodo";
+// import ListTodos from "./components/ListTodos";
 
 function App() {
   return (
-   <div>hello</div>
+    <Fragment>
+      <div className="container">
+        <InputTodo />
+        {/* <ListTodos /> */}
+      </div>
+    </Fragment>
   );
 }
 
