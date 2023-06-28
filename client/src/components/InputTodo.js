@@ -3,18 +3,17 @@ import React, { Fragment, useState } from "react";
 const InputTodo = () => {
   const [description, setDescription] = useState("");
 
-  //This code snippet is handling form submission by sending an HTTP POST request to a specified URL with the provided data in the request body. After a successful submission, it redirects the user to the home page.
   const onSubmitForm = async (e) => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch("http://localhost:5000/todos", {
+      const response = await fetch("http://localhost:5001/todos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-
-      window.location = "/";
+      console.log(response);
+    //   window.location = "/";
     } catch (err) {
       console.error(err.message);
     }

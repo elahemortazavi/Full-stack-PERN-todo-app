@@ -3,14 +3,14 @@ import "./App.css";
 
 //import components:
 import InputTodo from "./components/InputTodo";
-// import ListTodos from "./components/ListTodos";
+import ListTodos from "./components/ListTodos";
 
 function App() {
   return (
     <Fragment>
       <div className="container">
         <InputTodo />
-        {/* <ListTodos /> */}
+        <ListTodos />
       </div>
     </Fragment>
   );
