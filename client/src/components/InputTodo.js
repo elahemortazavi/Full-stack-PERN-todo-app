@@ -12,8 +12,8 @@ const InputTodo = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      console.log(response);
-    //   window.location = "/";
+
+      window.location = "/";
     } catch (err) {
       console.error(err.message);
     }
@@ -21,7 +21,7 @@ const InputTodo = () => {
 
   return (
     <Fragment>
-      <h1 className="text-center mt-5">Pern Todo List</h1>
+      <h1 className="text-center mt-5"> Elahe PERN Todo List</h1>
       <form className="d-flex mt-5" onSubmit={onSubmitForm}>
         <input
           type="text"
