@@ -7,13 +7,22 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5001;
 
+// const pool = new Pool({
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASSWORD,
+//   host: process.env.DB_HOST,
+//   port: process.env.DB_PORT,
+//   database: process.env.DB_DATABASE,
+// });
+
+// Database configuration
 const pool = new Pool({
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  database: process.env.DB_DATABASE,
+  connectionString: process.env.DB_URL, // Connection URL for connecting to the PostgreSQL database
+  ssl: {
+    rejectUnauthorized: false, // Disabling SSL/TLS certificate verification (for development purposes only)
+  },
 });
+
 
 //middleware
 app.use(cors());
