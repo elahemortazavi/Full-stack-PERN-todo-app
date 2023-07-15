@@ -1,9 +1,19 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
-const pool = require("./db");
-require("dotenv").config();
+// const pool = require("./db");
+const { Pool } = require("pg"); 
+const dotenv = require("dotenv"); // Module for loading environment variables from a .env file
+dotenv.config();
+const app = express();
+const port = process.env.PORT || 5001;
 
+const pool = new Pool({
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_DATABASE,
+});
 
 //middleware
 app.use(cors());
@@ -87,6 +97,6 @@ app.delete("/todos/:id", async (req, res) => {
 
 
 
-app.listen(5001, () => {
-  console.log("server has started on port 5001");
+app.listen(port, () => {
+  console.log(`server has started on ${port}`);
 });
