@@ -25,7 +25,12 @@ const pool = new Pool({
 
 
 //middleware
-app.use(cors());
+// app.use(cors());
+const corsOptions = {
+  origin: "https://pern-todo-list-app.onrender.com", // Replace this with your frontend URL
+};
+
+app.use(cors(corsOptions)); // Enable CORS for the specified origin
 app.use(express.json()); //req.body
 
 //ROUTES:
