@@ -5,7 +5,7 @@ const { Pool } = require("pg");
 const dotenv = require("dotenv"); // Module for loading environment variables from a .env file
 dotenv.config();
 const app = express();
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 // const pool = new Pool({
 //   user: process.env.DB_USER,
